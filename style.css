@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:rgb(50, 50, 50);
+}
+
+h1{
+    font-family:'Chakra Petch', sans-serif;
+    color:rgb(240, 240, 240);
+    font-size: 50px;
+    padding: 20px;
+}
+
+.navbar{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display:flex;
+    gap: 20px;
+}
+
+.navbar a{
+    font-family: 'Roboto',sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+
+}
+.navbar a:hover{
+    color: #00ffff;
+}
