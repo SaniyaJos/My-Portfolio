@@ -1,14 +1,23 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:rgb(50, 50, 50);
+    background: linear-gradient(to right, #1a1a1a, #4d4d4d);
 }
+#home{
+    padding: 200px 70px;
 
+}
+section{
+    min-height: 100vh;
+}
 h1{
     font-family:'Chakra Petch', sans-serif;
-    color:rgb(240, 240, 240);
+    color:white;
     font-size: 50px;
-    padding: 20px;
+    position: absolute;
+    top: 1px;
+    left:20px;
+
 }
 
 .navbar{
@@ -30,4 +39,87 @@ h1{
 }
 .navbar a:hover{
     color: #00ffff;
+}
+
+.l1,.l3{
+        font-family: 'Source Code Pro',sans-serif;
+        font-size: 50px;
+        color: white;
+
+}
+.gradient{
+    font-family: 'Kanit',sans-serif;
+    font-size: 90px;
+    background: linear-gradient(to right,#ff2164,#8502fe);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+}
+button{
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+    color: white; 
+    background: linear-gradient(to right,#ff2164,#8502fe);
+    padding: 12px 24px ;
+    border: none;
+    border-radius:20px ;
+    cursor: pointer ;
+    transition: transform 0.3s ease ;
+
+}
+button:hover{
+    transform: scale(1.05);
+}
+.about-section{
+    font-family: 'Source Code Pro',sans-serif;
+    font-size: 20px;
+    color: white;
+    
+
+}
+.about-section h2{
+    background: linear-gradient(to right,#cf174e,#ae2eee,#881bed);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+    margin-bottom: 30px;
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 50px;
+    
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+.abt-cont{
+    max-width: 800px;    
+}
+.about-image{
+    position:relative;
+    display: inline-block;
+    margin-top:20px; 
+    
+}
+.about-image img{
+    width: 300px;
+    height:350px;
+    border-radius: 3px;
+    position:relative;
+    z-index: 2;
+
+
+}
+.border{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 300px;
+  height: 350px;
+  border: 3px solid #00ffff;
+  border-radius: 5px;
+  z-index: 1;
+    
 }
