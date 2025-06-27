@@ -21,7 +21,7 @@ h1{
 }
 
 .navbar{
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 40px;
     display:flex;
@@ -29,7 +29,7 @@ h1{
 }
 
 .navbar a{
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Source Code Pro',sans-serif;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -56,7 +56,7 @@ h1{
     -webkit-text-fill-color:transparent;
 }
 button{
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Source Code Pro',sans-serif;
     font-size: 16px;
     color: white; 
     background: linear-gradient(to right,#ff2164,#8502fe);
@@ -92,7 +92,8 @@ button:hover{
     background-clip: text;
     -webkit-background-clip: text ;
     -webkit-text-fill-color:transparent;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
     font-family:'Chakra Petch', sans-serif;
     font-size: 50px;
     
@@ -132,4 +133,56 @@ button:hover{
   border-radius: 5px;
   z-index: 1;
     
+}
+.skills-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+
+}
+
+
+.skill-section h3{
+    background: linear-gradient(to right,#cf174e,#ae2eee,#881bed);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 50px;
+
+    
+}
+.skill-category {
+  border-radius: 12px;
+  padding: 2px 20px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.skill-category h4{
+    background: linear-gradient(to right,#cf174e,#ae2eee,#881bed);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.skill-category i{
+    margin-right: 8px;
+    font-size: 20px;
+}
+.skill-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skill-list li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-family: 'Source Code Pro','serif';
 }
