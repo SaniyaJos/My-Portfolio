@@ -152,7 +152,6 @@ button:hover{
     margin-left: 20px;
     font-family:'Chakra Petch', sans-serif;
     font-size: 50px;
-
     
 }
 .skill-category {
@@ -185,4 +184,85 @@ button:hover{
   align-items: center;
   font-size: 16px;
   font-family: 'Source Code Pro','serif';
+}
+.my-project{
+    margin: auto;
+    padding: 30px 20px;
+}
+.my-project h5{
+    background: linear-gradient(to right,#bea4ac,#e8354f,#881bed);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 50px;
+    text-align: center;
+
+}
+.project-card{
+    margin: 40px 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background: linear-gradient(to right,rgb(70, 68, 68),rgb(200, 197, 197)); 
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) ;
+    flex-wrap: wrap;
+    
+}
+.project-text{
+    color: white;
+    font-family: 'Source Code Pro','serif';
+    flex: 1;
+
+}
+.project-text h6{
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.project-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.project-image img{
+
+    width: 300px;
+    border-radius: 10px;
+
+
+}
+.button-container{
+
+    margin-top: 10px;
+}
+.project-button{
+    font-family: 'Source Code Pro',sans-serif;
+    font-size: 16px;
+    color: white; 
+    background: linear-gradient(to right,#ff2164,#8502fe);
+    padding: 12px 24px ;
+    border: none;
+    border-radius:20px ;
+    cursor: pointer ;
+    transition: transform 0.3s ease ;
+ 
+}
+.contacts{
+    margin: auto;
+    padding: 20px 20px;
+}
+
+.contacts h5{
+    background: linear-gradient(to right,#bea4ac,#e8354f,#881bed);
+    background-clip: text;
+    -webkit-background-clip: text ;
+    -webkit-text-fill-color:transparent;
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 50px;
+    text-align: center;
 }
