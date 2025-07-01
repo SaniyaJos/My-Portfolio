@@ -253,8 +253,8 @@ button:hover{
  
 }
 .contacts{
-    margin: auto;
-    padding: 20px 20px;
+    text-align: center;
+    padding: 80px 20px;
 }
 
 .contacts h5{
@@ -265,4 +265,22 @@ button:hover{
     font-family:'Chakra Petch', sans-serif;
     font-size: 50px;
     text-align: center;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-icons a {
+  font-size: 40px;
+  color: #ffffff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  color: #00ffff; 
 }
