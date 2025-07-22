@@ -2,13 +2,14 @@ body{
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #1a1a1a, #4d4d4d);
+    overflow-x: hidden;
 }
 #home{
-    padding: 200px 70px;
-
+    padding: 100px 20px;
 }
 section{
     min-height: 100vh;
+    width: 100%;
 }
 h1{
     font-family:'Chakra Petch', sans-serif;
@@ -72,13 +73,12 @@ button:hover{
     transform: scale(1.05);
 }
 .home-image img{
-    width : 750px;
-    height :500px;
+    width: 750px;
+    height: 500px;
     position: absolute;
-    top :100px;
-    right:150px;
+    top: 100px;
+    right: 150px;
     filter: brightness(0) saturate(100%) invert(89%) sepia(13%) saturate(7487%) hue-rotate(135deg) brightness(70%) contrast(106%);
-    
 }
 .about-section{
     font-family: 'Source Code Pro',sans-serif;
@@ -200,7 +200,8 @@ button:hover{
 
 }
 .project-card{
-    margin: 40px 400px;
+    margin: 40px auto;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -209,9 +210,8 @@ button:hover{
     padding: 20px;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) ;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     flex-wrap: wrap;
-    
 }
 .project-text{
     color: white;
@@ -283,4 +283,108 @@ button:hover{
 .contact-icons a:hover {
   transform: scale(1.2);
   color: #00ffff; 
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .l1, .l3 {
+        font-size: 30px;
+    }
+
+    .gradient {
+        font-size: 50px;
+    }
+
+    .home-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        position: absolute;
+        top: 300px;
+        right: 20px;
+    }
+
+    .about-section h2,
+    .skill-section h3,
+    .my-project h5,
+    .contacts h5 {
+        font-size: 35px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .about-wrapper {
+        gap: 30px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .skill-category {
+        margin: 10px 0;
+    }
+
+    .project-card {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .contact-icons {
+        gap: 20px;
+    }
+
+    .contact-icons a {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #home {
+        padding: 50px 15px;
+    }
+    
+    .home-image img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        top: 400px;
+        right: 10px;
+    }
+
+    .gradient {
+        font-size: 40px;
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+
+    .skill-category h4 {
+        font-size: 24px;
+    }
+
+    .project-text h6 {
+        font-size: 18px;
+    }
+
+    .project-text p {
+        font-size: 14px;
+    }
 }
