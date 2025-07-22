@@ -5,11 +5,14 @@ body{
     overflow-x: hidden;
 }
 #home{
-    padding: 100px 20px;
+    padding: 60px 20px;
+    position: relative;
+    min-height: 100vh;
 }
 section{
     min-height: 100vh;
     width: 100%;
+    overflow-x: hidden;
 }
 h1{
     font-family:'Chakra Petch', sans-serif;
@@ -49,9 +52,8 @@ h1{
 
 }
 .name{
-    position: absolute;
-    top: 200px;
-    left: 20px;
+    margin-top: 100px;
+    padding: 20px;
 }
 .gradient{
     font-family: 'Kanit',sans-serif;
@@ -77,14 +79,14 @@ button{
 button:hover{
     transform: scale(1.05);
 }
-.home-image img{
+/* .home-image img{
     width: 200px;
     height:200px;
     position: absolute;
     top: 100px;
     right: 150px;
     
-}
+} */
 .about-section{
     font-family: 'Source Code Pro',sans-serif;
     font-size: 20px;
@@ -292,37 +294,55 @@ button:hover{
 
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
+    #home {
+        padding: 20px;
+    }
+
     h1 {
         font-size: 30px;
-        position: static;
+        position: relative;
         text-align: center;
         margin-bottom: 20px;
+        left: 0;
     }
 
     .navbar {
         position: static;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 20px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px auto;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .name {
+        margin-top: 60px;
+        text-align: center;
     }
 
     .l1, .l3 {
-        font-size: 30px;
+        font-size: 28px;
+        display: block;
+        margin-bottom: 10px;
     }
 
     .gradient {
-        font-size: 50px;
+        font-size: 45px;
+        display: block;
+        margin: 15px 0;
     }
 
-    .home-image img {
+    /* .home-image img {
         width: 100%;
         max-width: 500px;
         height: auto;
         position: absolute;
         top: 300px;
         right: 20px;
-    }
+    } */
 
     .about-section h2,
     .skill-section h3,
@@ -365,16 +385,20 @@ button:hover{
         padding: 50px 15px;
     }
     
-    .home-image img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        top: 400px;
-        right: 10px;
+    .name {
+        margin-top: 30px;
+        padding: 10px;
+    }
+
+    .l1, .l3 {
+        font-size: 22px;
+        margin-bottom: 8px;
     }
 
     .gradient {
-        font-size: 40px;
+        font-size: 32px;
+        margin: 10px 0;
+        line-height: 1.2;
     }
 
     .about-image img {
