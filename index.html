@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY PORTFOLIO</title>
-    <link rel="stylesheet" href="style.css?v=2.1">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link
         href="https://fonts.googleapis.com/css2?family=Chakra Petch&family=Roboto&family=Kanit&family=Source Code Pro&family=Poppins&family=Montserrat&display=swap"
         rel="stylesheet">
@@ -13,13 +13,16 @@
 
 <body>
     <header class="top-header">
-        <h1 class="logo">PORTFOLIO</h1>
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#skill">Skills</a>
-            <a href="#project">My Projects</a>
-            <a href="#contact">Contact</a>
+        <h1 class="logo"><a href="#home">PORTFOLIO</a></h1>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About Me</a>
+            <a href="#skill" class="nav-link">Skills</a>
+            <a href="#project" class="nav-link">My Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
     </header>
 
@@ -30,12 +33,23 @@
             <div class="floating-shape shape-3"></div>
         </div>
         <div class="hero-content">
-            <span class="l1">Hello World!</span>
-            <span class="gradient">I'M SANIYA JOSE</span>
-            <div class="hero-btn">
+            <div class="hero-badge">
+                <span class="wave">👋</span> Hello World!
+            </div>
+            <h2 class="gradient hero-title">I'M SANIYA JOSE</h2>
+            <p class="hero-tagline">Computer Science Student &amp; Developer passionate about AI, Full-Stack &amp; Design</p>
+            <div class="hero-actions">
                 <a href="assets/Resume (1).pdf" download="final.pdf" style="text-decoration: none;">
-                    <button>Download CV</button>
+                    <button class="btn btn-primary"><i class="fas fa-file-arrow-down"></i> Download CV</button>
                 </a>
+                <a href="#project" style="text-decoration: none;">
+                    <button class="btn btn-secondary"><i class="fas fa-code"></i> View Projects</button>
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/SaniyaJos" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saniya-jose-93407b328/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:sanjo2027@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </section>
@@ -297,7 +311,38 @@
         </div>
     </section>
 
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        if (navToggle && navbar) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('nav-active');
+                navToggle.classList.toggle('toggle-active');
+                const icon = navToggle.querySelector('i');
+                if (navbar.classList.contains('nav-active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('nav-active');
+                    navToggle.classList.remove('toggle-active');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

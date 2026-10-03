@@ -23,7 +23,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #ffe9fc 50%, #fdf2ff 100%);
+  background: radial-gradient(circle at 85% 15%, rgba(255, 33, 100, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 15% 65%, rgba(133, 2, 254, 0.08) 0%, transparent 45%),
+              linear-gradient(135deg, #ffffff 0%, #fff2fd 50%, #fbf5ff 100%);
   color: #1a1a1a;
   overflow-x: hidden;
   width: 100%;
@@ -51,27 +53,28 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
+  padding: 18px 48px;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
 }
 
-.logo {
+.logo a {
   font-family: 'Burn bold', sans-serif;
   color: #1a1a1a;
-  font-size: 34px;
-  margin: 0;
+  font-size: 32px;
+  text-decoration: none;
   letter-spacing: 1px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .navbar a {
@@ -80,7 +83,7 @@ section {
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: color 0.25s ease, transform 0.2s ease;
 }
 
 .navbar a:hover {
@@ -88,11 +91,15 @@ section {
   transform: translateY(-1px);
 }
 
+.nav-toggle {
+  display: none;
+}
+
 /* =========================================
    HERO / HOME SECTION
 ========================================= */
 #home {
-  padding: 120px 40px 60px 40px;
+  padding: 130px 48px 60px 48px;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -105,58 +112,135 @@ section {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 850px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 14px;
 }
 
-.l1, .l3 {
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(133, 2, 254, 0.2);
+  border-radius: 30px;
+  padding: 7px 18px;
   font-family: 'Source Code Pro', monospace;
-  font-size: clamp(24px, 4vw, 48px);
-  color: #1a1a1a;
+  font-size: 15px;
   font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
+  color: #8502fe;
+  box-shadow: 0 4px 15px rgba(133, 2, 254, 0.08);
 }
 
-.gradient {
+.hero-badge .wave {
+  display: inline-block;
+  animation: wave 2s infinite transform;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(14deg); }
+  40%, 80% { transform: rotate(-14deg); }
+}
+
+.hero-title {
   font-family: 'Burn bold', sans-serif;
-  font-size: clamp(48px, 10vw, 150px);
+  font-size: clamp(48px, 10vw, 130px);
   background: linear-gradient(to right, #ff2164, #8502fe);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.08;
-  display: inline-block;
+  line-height: 1.05;
+  margin: 2px 0;
   word-break: break-word;
-  margin: 4px 0 20px 0;
 }
 
-.hero-btn {
-  margin-top: 10px;
-}
-
-button, .project-button {
+.hero-tagline {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: clamp(15px, 2vw, 18px);
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn, button, .project-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
   font-weight: 600;
-  color: white;
-  background: linear-gradient(to right, #ff2164, #8502fe);
-  padding: 13px 30px;
-  border: none;
-  border-radius: 25px;
+  padding: 13px 28px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 33, 100, 0.3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
 }
 
-button:hover, .project-button:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 6px 22px rgba(255, 33, 100, 0.45);
+.btn-primary, button, .project-button {
+  background: linear-gradient(to right, #ff2164, #8502fe);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 18px rgba(255, 33, 100, 0.35);
+}
+
+.btn-primary:hover, button:hover, .project-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 33, 100, 0.48);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #8502fe;
+  border: 2px solid rgba(133, 2, 254, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover {
+  background: white;
+  border-color: #8502fe;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(133, 2, 254, 0.15);
+}
+
+.hero-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.hero-socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 18px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-3px) scale(1.08);
+  color: #ff2164;
+  box-shadow: 0 6px 18px rgba(255, 33, 100, 0.25);
 }
 
 /* Floating ambient shapes */
@@ -528,6 +612,18 @@ button:hover, .project-button:hover {
 
 /* Tablet (Screens <= 992px) */
 @media screen and (max-width: 992px) {
+  .top-header {
+    padding: 16px 28px;
+  }
+
+  .navbar {
+    gap: 18px;
+  }
+
+  #home {
+    padding: 110px 28px 50px 28px;
+  }
+
   .project-card,
   .project-card:nth-of-type(even) {
     grid-template-columns: 1fr;
@@ -548,33 +644,95 @@ button:hover, .project-button:hover {
 /* Mobile Devices (Screens <= 768px) */
 @media screen and (max-width: 768px) {
   .top-header {
-    position: sticky;
+    padding: 14px 20px;
+    position: fixed;
     top: 0;
-    padding: 12px 16px;
-    flex-direction: column;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.95);
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.94);
   }
 
-  .logo {
+  .logo a {
     font-size: 26px;
   }
 
-  .navbar {
-    display: flex;
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    width: 100%;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1.5px solid rgba(133, 2, 254, 0.25);
+    color: #8502fe;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+  }
+
+  .nav-toggle:active, .nav-toggle.toggle-active {
+    background: #8502fe;
+    color: white;
+    border-color: #8502fe;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 76px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(133, 2, 254, 0.15);
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    display: none;
+    z-index: 999;
+  }
+
+  .navbar.nav-active {
+    display: flex;
+    animation: fadeInDown 0.25s ease-out forwards;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .navbar a {
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: #1a1a1a;
+  }
+
+  .navbar a:active, .navbar a:hover {
+    background: rgba(133, 2, 254, 0.08);
+    color: #8502fe;
   }
 
   #home {
-    min-height: calc(100vh - 100px);
-    padding: 40px 20px 60px 20px;
+    min-height: calc(100vh - 80px);
+    padding: 100px 20px 50px 20px;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -583,32 +741,54 @@ button:hover, .project-button:hover {
   .hero-content {
     align-items: center;
     text-align: center;
+    gap: 12px;
   }
 
-  .l1, .l3 {
-    font-size: clamp(20px, 6vw, 28px);
-    margin-bottom: 6px;
+  .hero-badge {
+    font-size: 14px;
+    padding: 6px 16px;
   }
 
-  .gradient {
-    font-size: clamp(34px, 10vw, 56px);
-    margin: 4px 0 18px 0;
-    display: block;
-    line-height: 1.15;
+  .hero-title {
+    font-size: clamp(38px, 11vw, 56px);
+    margin: 4px 0 8px 0;
+    line-height: 1.12;
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+    max-width: 340px;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 290px;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .hero-actions a,
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .hero-socials {
+    justify-content: center;
+    margin-top: 14px;
+    gap: 16px;
   }
 
   .home-decoration {
-    top: 50%;
-    right: -60px;
-    transform: translateY(-50%);
+    top: 45%;
+    right: -70px;
     width: 220px;
     height: 220px;
     opacity: 0.12;
-  }
-
-  button {
-    padding: 12px 28px;
-    font-size: 15px;
   }
 
   .about-section,
@@ -653,6 +833,7 @@ button:hover, .project-button:hover {
 
   .programming-icons {
     gap: 20px;
+    justify-content: center;
   }
 
   .programming-icons i {
@@ -724,24 +905,19 @@ button:hover, .project-button:hover {
 /* Small Mobile (Screens <= 480px) */
 @media screen and (max-width: 480px) {
   .top-header {
-    padding: 10px 12px;
-    gap: 8px;
+    padding: 12px 16px;
   }
 
-  .navbar {
-    gap: 10px;
-  }
-
-  .navbar a {
-    font-size: 12px;
+  .logo a {
+    font-size: 22px;
   }
 
   #home {
-    padding: 30px 12px 50px 12px;
+    padding: 90px 14px 40px 14px;
   }
 
-  .gradient {
-    font-size: clamp(30px, 9.5vw, 44px);
+  .hero-title {
+    font-size: clamp(34px, 10vw, 44px);
   }
 
   .about-card {
